@@ -1,0 +1,54 @@
+.color-theme-yellow,
+.color-theme-lime{
+	.categories-bx .menus,
+	.categories-bx .title,
+	.profile-wraper .profile-content .name,
+	.profile-wraper .profile-content p,
+	.button.button-secondary,
+	.card-overlay .title a,
+	.card-overlay .price,
+	.card-overlay .price del,
+	.messages .message.message-sent .message-content .message-bubble,
+	.rewards-box .title,
+	.rewards-box p,
+	.rewards-box p a,
+	.rewards-progress .progress-head h5, 
+	.rewards-progress .progress-head p{
+		color: #000;
+	}
+	
+	.categories-bx .icon-bx path[fill],
+	.categories-bx .icon-bx path{
+		fill: #000;
+	}
+	
+	.color-black{
+		color: #fff;
+	}
+	.rewards-progress .progress-bar li.active{
+		background-color: #000;
+	}
+	.rewards-progress .progress-bar li {
+		background-color: rgba(255, 255, 255, 0.5);
+	}
+}
+.color-theme-lightblue{
+	.categories-bx .menus,
+	.card-overlay .price del{
+		color: #fff;
+	}
+}
+.color-theme-yellow:not(.theme-dark),
+.color-theme-lime:not(.theme-dark){
+	.get-started .dz-title,
+	.get-started p{
+		color: #000;
+	}
+	.get-started .swiper-pagination .swiper-pagination-bullet {
+		background: rgba(0,0,0,0.3);
+	}
+	.get-started .swiper-pagination .swiper-pagination-bullet-active,
+	.start-btn .icon-bx{
+		background-color: #000;
+	}
+}

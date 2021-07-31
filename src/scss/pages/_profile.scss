@@ -1,0 +1,149 @@
+// Profile
+.profile-wraper{
+	.profile-info{
+		padding-top: 80px;
+		padding-bottom: 60px;
+	}
+	.author{
+		height: 130px;
+		width: 130px;
+		min-width: 100px;
+		position: relative;
+		box-sizing: border-box;
+		margin: 40px auto;
+		
+		img{
+			height: 100%;
+			width: 100%;
+			border-radius: 50%;
+		}
+		
+		&:before,
+		&:after{
+			content: "";
+			width: 100%;
+			height: 100%;
+			border-radius: 50%;
+			position: absolute;
+			left: 0;
+			top: 0;
+			box-sizing: border-box;
+		}
+		&:after{
+			border: 4px solid $secondary;
+			transform: scale(1.3);
+			box-shadow: inset 0 0px 6px, 0 0px 6px;
+		}
+		&:before{
+			border: 1px solid rgba(255,255,255,0.1);
+			transform: scale(1.6);
+		}
+	}
+	.badge-lg{
+		z-index: 1;
+		position: absolute;
+		left: 50%;
+		transform: translateX(-50%);
+		bottom: -30px;
+		background-color: var(--f7-theme-color-tint);
+		width: max-content;
+	}
+	.profile-content{
+		text-align: center;
+		padding-top: 15px;
+		.name{
+			margin: 0;
+			color: #fff;
+		}
+		p{
+			margin: 5px 0 0;
+			color: #fff;
+			display: flex;
+			font-size: 16px;
+			align-items: center;
+			justify-content: center;
+			span{			
+				opacity: 0.5;
+			}
+			i{
+				margin-right: 8px;
+				color: #30c648;
+				font-size: 14px;
+			}
+		}
+	}
+	.content-info{
+		padding: 0;
+		justify-content: center;
+		display: flex;
+		margin: 35px 0 0;
+			
+		a{
+			height: 65px;
+			width: 65px;
+			border-radius: 50%;
+			background-color: #fff;
+			display: inline-block;
+			text-align: center;
+			margin: auto 5px;
+			
+			path[fill],
+			path,
+			circle{
+				fill: var(--f7-theme-color);
+			}
+			i{
+				color: var(--f7-theme-color);
+			}
+			svg{
+				height: 65px;
+			}
+			
+			&.tab-link-active{
+				background-color: #9c9c9c;
+				path[fill],
+				path,
+				circle{
+					fill: #fff;
+				}
+				i{
+					color: #fff;
+				}
+			}
+		}
+	}
+	
+	.fixed-content{
+		margin: -25px 0 0;
+		z-index: 1;
+		padding-bottom: 0;
+		left: 50%;
+		transform: translateX(-50%);
+	}
+	
+	.phone-num{
+		display: flex;
+		align-items: center;
+		
+		.icon-bx{
+			height: 60px;
+			min-width: 60px;
+			border-radius: 50%;
+			background-color: var(--f7-theme-color);
+			text-align: center;
+			margin-right: 15px;
+			svg{
+				height: 60px;
+			}
+		}
+		.info{
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+			width: 100%;
+		}
+		.number{
+			margin: 0;
+		}
+	}
+}

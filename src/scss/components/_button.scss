@@ -1,0 +1,25 @@
+// Button
+.button{
+	letter-spacing: unset;
+	
+	&.button-large{
+		font-size: 16px;
+		padding: 20px 30px;
+		height: auto;
+		line-height: 1.3;
+		font-weight: 600;
+		border-radius:22px;
+	}
+	&.color-light{
+		background-color: var(--f7-theme-color-light);
+		color: var(--f7-theme-color);
+	}
+	&.button-secondary{
+		background-color: $secondary;
+		color: var(--f7-theme-color);
+	}
+	&.button-gray{
+		background-color: #E5E5E5;
+		color: #646464;
+	}
+}

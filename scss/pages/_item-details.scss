@@ -1,0 +1,95 @@
+// Item Details
+.item-size-list{
+	display: flex;
+    padding: 0;
+	margin: 25px -5px;
+	justify-content: center;
+	
+	li{
+		display: inline-block;
+		overflow: hidden;
+		border-radius: 22px;
+		padding: 0;
+		margin: 0 5px;
+		
+		.item-radio{
+			
+			.item-inner{
+				height: 64px;
+				width: 64px;
+				border-radius: 22px;
+				border: 1px solid $secondary;
+				background-color: lighten($secondary, 10);
+				display: block;
+				text-align: center;
+				line-height: 64px;
+				color: #000;
+				font-size: 16px;
+			}
+			
+			input:checked ~ .item-inner{
+				background-color: $secondary;
+			}
+		}
+	}
+	@include respond('phone-min') {
+		justify-content: unset;
+	}
+}
+.add-wishlist-btn{
+	.fas{
+		display: none;
+	}
+	&.active{
+		.far{
+			display: none;
+		}
+		.fas{
+			display: block;
+		}
+	}
+	i{
+		font-size: 24px!important;
+		margin: 0;
+	}
+}
+.item-details{
+	.button{
+		span{
+			opacity: 0.5;
+			margin-left: 10px;
+		}
+	}
+	
+	.stepper{
+		border: 1px solid #c4c4c4;
+		height: 42px;
+	
+		.stepper-button-minus,
+		.stepper-button-plus,
+		.stepper-input-wrap{
+			border: 0;
+		}
+		input{
+			font-size: 18px;
+			color: #000;
+		}
+	}
+	
+	.price-bx{		
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		margin-bottom: 25px;
+
+		.price{
+			margin: 0;
+			display: flex;
+			align-items: center;
+			i{
+				font-size: 30px;
+				margin-right: 8px;
+			}
+		}
+	}
+}
