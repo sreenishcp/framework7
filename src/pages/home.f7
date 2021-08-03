@@ -84,6 +84,10 @@
         </div>
         <div data-space-between="20" data-slides-per-view="auto" data-centered-slides="false" class="swiper-container swiper-init mb-40 categories-swiper">
           <div class="swiper-wrapper">
+            ${categories.map((cat) => $h`
+              <li>${cat.title}</li>
+              `)}
+
             <div class="swiper-slide">
               <div class="categories-bx">
                 <div class="icon-bx">
@@ -356,29 +360,43 @@
 </template>
 <script>
   // script must return/export component function
-  localStorage.removeItem("token")
+  //localStorage.removeItem("token")
   export default (props, { $f7, $on }) => {
     const title = 'Component Page';
-    const names = ['John', 'Vladimir', 'Timo'];
+    //var categories=[];
+    //const categories = [];
 
     const openAlert = () => {
       $f7.dialog.alert('Hello world!');
     }
 
-    $on('pageInit', () => {
-            // request user data on page init
-            console.log(localStorage.token)
-      //   $f7.request.get('http://localhost/api/employee').then((res) => {
+    const categories = [
+      {
+        title: 'Item 1'
+      },
+      {
+        title: 'Item 2'
+      },
+    ];
 
-      //   user = res.data;
-      //   $update();
-      // });
+    $on('pageInit', () => {
+           
+            console.log(localStorage.token)
+            const categories=$f7.request.get('http://localhost/api/categories').then((res) => {
+              console.log(res.data)
+              return res.data;
+              console.log(categories)
+      });
     });
     $on('pageAfterOut', () => {
-      // page has left the view
     });
 
-    // component function must return render function
+    $f7.request.setup({
+      headers: {
+        'Authorization': 'Bearer ' + localStorage.token,
+        contentType: 'application/json'
+      }
+    })
     return $render;
   }
 </script>

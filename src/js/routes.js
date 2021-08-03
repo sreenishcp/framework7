@@ -15,7 +15,16 @@ import Profile from '../pages/profile.f7';
 var routes = [
   {
     path: '/',
-    component: HomePage,
+    componentUrl:'/pages/home.f7',
+    beforeEnter({routeTo, routeFrom, resolve, reject}) {
+      const router = this;
+      if (!localStorage.token) {
+        reject();
+        router.navigate('/sign-in/');
+        return;
+      }
+      resolve();
+    }
   },
   {
     path: '/about/',
@@ -43,6 +52,20 @@ var routes = [
       } else {
         resolve({ component: SignIn,})
       }
+    }
+  },
+
+  {
+    path: '/sign-in/',
+    componentUrl:'/pages/signin.f7',
+    beforeEnter({routeTo, routeFrom, resolve, reject}) {
+      const router = this;
+      if (localStorage.token) {
+        reject();
+        router.navigate('/');
+        return;
+      }
+      resolve();
     }
   },
 

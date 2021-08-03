@@ -196,7 +196,7 @@
   </div>
 </template>
 <script>
-  export default (props, { $f7, $update }) => {
+  export default (props, { $f7, $update, $onMounted }) => {
 
     // Login screen demo data
     let username = '';
@@ -215,6 +215,13 @@
         $f7.loginScreen.close();
       });
     }
+    $onMounted(() => {
+      $f7.views.create('.view-main', {
+        browserHistory:true,
+        browserHistorySeparator: '',
+      })
+    })
+
 
     return $render;
   }
